@@ -1,0 +1,8 @@
+batch_size: 16
+num_workers: 2
+seq_len_past: 14     
+seq_len_future: 45   
+spatial_size: 32     
+num_era5_vars: 5     
+num_daymet_vars: 4   
+num_static_vars: 5

@@ -1,0 +1,8 @@
+defaults:
+  - data: dummy
+  - model: dummy_linear
+  - training: default
+  - _self_
+
+seed: 42
+work_dir: ${hydra:runtime.cwd}
