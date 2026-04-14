@@ -1,0 +1,23 @@
+name: s2s_forecast
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch
+  - torchvision
+  - xarray
+  - dask
+  - netcdf4
+  - zarr
+  - numpy
+  - pandas
+  - scikit-learn
+  - hydra-core
+  - wandb
+  - tqdm
+  - pytest
+  - black
+  - flake8

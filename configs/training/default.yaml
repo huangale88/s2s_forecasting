@@ -1,0 +1,3 @@
+epochs: 3
+learning_rate: 0.001
+device: "cuda" # will fallback to cpu/mps if unavailable
