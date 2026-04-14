@@ -67,19 +67,15 @@ class DummyS2SDataset(Dataset):
 
 
 def get_dataloaders(cfg: DictConfig) -> tuple[DataLoader, DataLoader]:
-    """Create train and validation DataLoaders from config.
-
-    Args:
-        cfg: Hydra config containing data parameters (batch_size, num_workers, etc.).
-
-    Returns:
-        Tuple of (train_loader, val_loader).
-    """
+    """Create train and validation DataLoaders from config."""
+    
     train_dataset = DummyS2SDataset(cfg, mode="train")
     val_dataset = DummyS2SDataset(cfg, mode="val")
 
-    # Use 0 workers to avoid multiprocessing memory issues in constrained environments
-    num_workers = min(cfg.num_workers, 0) if cfg.num_workers > 0 else 0
+    num_workers = cfg.num_workers
+    
+    # Print actual worker count
+    print(f"Config num_workers: {cfg.num_workers} | Actual DataLoader num_workers: {num_workers}")
 
     train_loader = DataLoader(
         train_dataset,
