@@ -1,4 +1,3 @@
-```markdown
 # Subseasonal-to-Seasonal (S2S) Forecasting
 
 This repository contains a PyTorch-based machine learning pipeline for Subseasonal-to-Seasonal (S2S) forecasting. The project is designed to handle multi-dimensional meteorological and hydrological data—including gridded weather data (ERA5), meteorological forcings (Daymet), and static basin attributes (CAMELS). It uses Hydra for robust and scalable configuration management.
