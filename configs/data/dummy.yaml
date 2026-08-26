@@ -1,5 +1,5 @@
 batch_size: 16
-num_workers: 2
+num_workers: 8
 seq_len_past: 14     
 seq_len_future: 45   
 spatial_size: 32     

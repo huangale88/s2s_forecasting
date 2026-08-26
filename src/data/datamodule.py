@@ -27,17 +27,19 @@ class DummyS2SDataset(Dataset):
         }
 
 
-def get_dataloaders(cfg: DictConfig) -> tuple[DataLoader, DataLoader]:
+def get_dataloaders(cfg: DictConfig, seed: int = 42) -> tuple[DataLoader, DataLoader]:
     train_dataset = DummyS2SDataset(cfg, mode="train")
     val_dataset = DummyS2SDataset(cfg, mode="val")
-    
-    print(f"Config num_workers: {cfg.num_workers} | Actual DataLoader num_workers: {cfg.num_workers}")
+
+    generator = torch.Generator()
+    generator.manual_seed(seed)
 
     train_loader = DataLoader(
         train_dataset,
         batch_size=cfg.batch_size,
         num_workers=cfg.num_workers,
         shuffle=True,
+        generator=generator,
     )
 
     val_loader = DataLoader(

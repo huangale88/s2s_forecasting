@@ -24,7 +24,7 @@ def main(cfg: DictConfig):
     
     print(f"Using device: {device}")
     
-    train_loader, val_loader = get_dataloaders(cfg.data)
+    train_loader, val_loader = get_dataloaders(cfg.data, seed=cfg.seed)
     print(f"Train batches: {len(train_loader)}, Val batches: {len(val_loader)}")
     
     model = DummyLinearS2S(cfg.model, cfg.data).to(device)
